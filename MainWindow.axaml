@@ -25,11 +25,10 @@
                 Background="Aquamarine"
                 Padding="5">
                 <StackPanel
-                    Orientation="Horizontal"
+                    Orientation="Vertical"
                     >
-                    <!-- <Button Width="70">Sign in</Button> -->
-                    <!-- <Button Width="70">Sign up</Button> -->
-                    <Button >Sign up</Button>
+                    <Button Width="70">Sign in</Button>
+                    <Button Width="70">Sign up</Button>
                 </StackPanel>
             </Border>
         </Grid>
