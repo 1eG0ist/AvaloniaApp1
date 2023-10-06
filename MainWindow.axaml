@@ -2,8 +2,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
+        Width="600" Height="450"
         x:Class="AvaloniaApp1.MainWindow"
         Title="AvaloniaApp1">
-    Welcome to Avalonia!
+    <Grid RowDefinitions="Auto, *, Auto">
+        <!-- Title Bar -->
+        <Grid Grid.Row="0" Background="DarkViolet" Height="40" ColumnDefinitions="Auto, Auto, *, Auto, Auto">
+            <Rectangle Grid.Column="0" Fill="MediumSlateBlue" Width="40"></Rectangle>
+            <Rectangle Grid.Column="1" Fill="MediumSlateBlue" Width="40"></Rectangle>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label FontWeight="Black">AVALONIA PROJECT</Label>
+                <Label>LOUDNESS METER</Label>
+            </StackPanel>
+            <Rectangle Grid.Column="3" Fill="MediumSlateBlue" Width="40"></Rectangle>
+            <Rectangle Grid.Column="4" Fill="MediumSlateBlue" Width="40"></Rectangle>
+        </Grid>
+        
+        <!-- Main window area -->
+        <Grid Grid.Row="1" Background="#333" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border
+                Background="Aquamarine"
+                Padding="5">
+                <StackPanel
+                    Orientation="Horizontal"
+                    >
+                    <!-- <Button Width="70">Sign in</Button> -->
+                    <!-- <Button Width="70">Sign up</Button> -->
+                    <Button >Sign up</Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+        
+        <!-- Bottom Bar -->
+        <Grid Grid.Row="2" Height="40">
+            
+        </Grid>
+    </Grid>
 </Window>
