@@ -71,7 +71,6 @@ public partial class MainWindow : Window
         {
             Console.WriteLine("Wrong data");
         }
-        PeresInput2.Text.ToCharArray();
     }
     
     static List<string> GeneratePermutations(int length, char[] symbols)
