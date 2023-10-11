@@ -1,41 +1,79 @@
 <Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
-        Width="600" Height="450"
-        x:Class="AvaloniaApp1.MainWindow"
-        Title="AvaloniaApp1">
-    <Grid RowDefinitions="Auto, *, Auto">
-        <!-- Title Bar -->
-        <Grid Grid.Row="0" Background="DarkViolet" Height="40" ColumnDefinitions="Auto, Auto, *, Auto, Auto">
-            <Rectangle Grid.Column="0" Fill="MediumSlateBlue" Width="40"></Rectangle>
-            <Rectangle Grid.Column="1" Fill="MediumSlateBlue" Width="40"></Rectangle>
-            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label FontWeight="Black">AVALONIA PROJECT</Label>
-                <Label>LOUDNESS METER</Label>
-            </StackPanel>
-            <Rectangle Grid.Column="3" Fill="MediumSlateBlue" Width="40"></Rectangle>
-            <Rectangle Grid.Column="4" Fill="MediumSlateBlue" Width="40"></Rectangle>
-        </Grid>
-        
-        <!-- Main window area -->
-        <Grid Grid.Row="1" Background="#333" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Border
-                Background="Aquamarine"
-                Padding="5">
-                <StackPanel
-                    Orientation="Vertical"
-                    >
-                    <Button Width="70">Sign in</Button>
-                    <Button Width="70">Sign up</Button>
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
+    Width="600" Height="450" x:Class="AvaloniaApp1.MainWindow"
+    Title="Комбинаторика" Icon="/Assets/Images/AppIcon.png" Background="Gainsboro">
+    <TabControl>
+        <!-- Perestanovki view -->
+        <TabItem FontWeight="Bold" FontSize="12" Header="перестановка" VerticalContentAlignment="Center">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Height="20" VerticalAlignment="Top" Orientation="Horizontal" Margin="5 10 5 5">
+                    <TextBlock Text="Количество элементов: " 
+                               HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <TextBox x:Name="PeresInput" Height="30"></TextBox>
+                    <Button x:Name="PeresGetResultBtn" Height="30" Background="Silver"
+                            Margin="20 0 0 0" Click="PeresGetResultBtn_OnClick">Посчитать</Button>
+                    <TextBlock x:Name="PeresResult" Margin="50 0 0 0"></TextBlock>
                 </StackPanel>
-            </Border>
-        </Grid>
-        
-        <!-- Bottom Bar -->
-        <Grid Grid.Row="2" Height="40">
+                <StackPanel Orientation="Horizontal" Height="20" Margin="5 50 5 5">
+                    <TextBlock Text="Элементы: " HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <TextBox x:Name="PeresInput2" Height="30"></TextBox>
+                    <TextBlock Text="Длина: "  Margin="20 0 0 0"
+                               HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <TextBox x:Name="PeresInput3" Height="30"></TextBox>
+                    <Button x:Name="PeresGetVariants" Height="30" Background="Silver"
+                            Margin="20 0 0 0" Click="PeresGetVariants_OnClick">Получить варианты</Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="20" Margin="5 50 5 5">
+                    <TextBlock Text="С повторениями: " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox x:Name="PeresResult2" Height="30" Width="450"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="20" Margin="5 50 5 5">
+                    <TextBlock Text="Без повторений: " HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox x:Name="PeresResult3" Height="30" Width="454"/>
+                </StackPanel>
+                
+            </StackPanel>
             
-        </Grid>
-    </Grid>
+       </TabItem>
+        
+        <!-- Razmeschenie view -->
+        <TabItem FontWeight="Bold" FontSize="12" Header="размещение" VerticalContentAlignment="Center">
+            <StackPanel Orientation="Vertical" Margin="10 50 5 5">
+                <TextBox x:Name="RazmTopIndex" Margin="40 0 0 0" Width="10"
+                         HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="A" FontSize="100" Margin="0 -20 0 -20 " Padding="0 0 0 0" />
+                    <Button x:Name="RazmGetResult" FontSize="100" Margin="100 0 50 0 " Height="100" VerticalAlignment="Center"
+                            Padding="0 -20 5 30" Click="RazmGetResult_OnClick">=</Button>
+                    <TextBlock x:Name="RazmResult" FontSize="24" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
+                <TextBox x:Name="RazmBottomIndex" Margin="40 0 0 0" Width="10"
+                         HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+        </TabItem>
+        
+        <!-- Sochetanie view -->
+        <TabItem FontWeight="Bold" FontSize="12" Header="сочетание" VerticalContentAlignment="Center">
+            <StackPanel Orientation="Vertical" Margin="10 50 5 5">
+                <TextBox x:Name="SochTopIndex" Margin="40 0 0 0" Width="10"
+                         HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="C" FontSize="100" Margin="0 -20 0 -20 " Padding="0 0 0 0" />
+                    <Button x:Name="SochGetResult" FontSize="100" Margin="100 0 50 0 " Height="100" VerticalAlignment="Center"
+                            Padding="0 -20 5 30" Click="SochGetResult_OnClick">=</Button>
+                    <TextBlock x:Name="SochResult" FontSize="24" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
+                <TextBox x:Name="SochBottomIndex" Margin="40 0 0 0" Width="10"
+                         HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+        </TabItem>
+        
+        <!-- Pascal view -->
+        <TabItem FontWeight="Bold" FontSize="12" Header="треугольник Паскаля" VerticalContentAlignment="Center">
+            <Image Source="Assets/Images/pascal.png"></Image>
+        </TabItem>
+    </TabControl>
 </Window>
